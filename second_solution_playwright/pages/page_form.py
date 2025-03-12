@@ -22,7 +22,7 @@ class PageForm:
             raise Exception(f'Error executing {action_name}: {str(e)}')
 
     async def type_text(self, locator: Locator, text: str):
-        await self.safe_execute(locator.fill, "type_text", text)
+        return await self.safe_execute(locator.fill, "type_text", text)
 
     async def click_element(self, locator: Locator):
         await self.safe_execute(locator.click, "click_element")

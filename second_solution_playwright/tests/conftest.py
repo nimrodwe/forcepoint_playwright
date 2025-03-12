@@ -10,10 +10,9 @@ async def setup():
         context = await browser.new_context()
         page = await context.new_page()
 
-        # Calling the base class which needs to receive the page object
+        # base gives access to the base url, and also receives the page object
         base = BaseClass(page)
         await page.goto(base.base_url)
-        yield page
+        yield base
         await page.close()
         await browser.close()
-

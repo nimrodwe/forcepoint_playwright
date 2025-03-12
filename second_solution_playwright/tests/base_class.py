@@ -1,4 +1,6 @@
 import os
+
+import pytest_asyncio
 from dotenv import load_dotenv
 from second_solution_playwright.pages.page_buttons import PageButtons
 from second_solution_playwright.pages.page_social import PageSocial
@@ -14,3 +16,4 @@ class BaseClass:
         self.page_buttons = PageButtons(self.page)
         self.page_social = PageSocial(self.page)
         self.page_form = PageForm(self.page)
+
